@@ -28,13 +28,13 @@ while m <= count:
         k = badmas[random.randint(0, 1)]
         mas.remove(mas[k])  # удаляем дверь, если их 2
 
-    isch = random.randint(0, 1)  # меняем ли выбор
-
-
+    
     second_choise = [x for x in range(0, 2) if mas[x][2] == False]  # выбираем дверь, которая не выбрана (гарантируется что такая дверь только одна)
     if mas[second_choise[0]][1] == 1:  # победили ли мы, если изменили выбор?
-        ch += 1
-    second_choise = []
+        ch += 1 #если да, то прибавляем счётчик
+        
+    second_choise = [] #очищаем наш выбор
+    
     second_choise = [x for x in range(0, 2) if mas[x][2] == True]  # выбираем дверь, которая уже выбрана (затычка)
     if mas[second_choise[0]][1] == 1:  # победили ли мы, если не изменили выбор?
         notch += 1
